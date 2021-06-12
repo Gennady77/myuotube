@@ -1,0 +1,89 @@
+@import './mixins.scss';
+@import './breakpoints.scss';
+
+html {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+
+  @include scrollbar(#aaa, #ddd);
+}
+
+:root {
+  --app-header-height: 56px;
+  --app-header-opacity: 0.95;
+  --app-left-sidebar-width: 240px;
+  --app-scrollbar-width: 16px;
+}
+
+.header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  height: var(--app-header-height);
+  background-color: rgba(255,255,255,var(--app-header-opacity));
+}
+
+.sidebar {
+  background-color: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: var(--app-left-sidebar-width);
+  margin-top: var(--app-header-height);
+  overflow: auto;
+
+  @include scrollbar();
+
+  &:hover {
+    &::-webkit-scrollbar-thumb {
+      background-color: #ccc;
+    }
+  }
+
+  &__content {
+    background-color: antiquewhite;
+
+    &--expanded {
+      height: 1500px;
+    }
+
+    &--collapsed {
+      height: 300px;
+    }
+  }
+}
+
+.content {
+  background-color: #fff;
+  margin-top: var(--app-header-height);
+  margin-left: var(--app-left-sidebar-width);
+  height: 2000px;
+
+  &__inner {
+    margin-top: 24px;
+  }
+}
+
+.content-block {
+  border: 3px solid coral;
+  height: 100px;
+  background-color: black;
+}
+
+.filter-bar {
+  height: var(--app-header-height);
+
+  &__inner {
+    width: calc(100% - var(--app-left-sidebar-width));
+    height: var(--app-header-height);
+    border-top: 1px solid rgba(0,0,0,0.1);
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    position: fixed;
+    background-color: rgba(255,255,255,var(--app-header-opacity));
+  }
+}

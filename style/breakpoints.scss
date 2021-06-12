@@ -1,0 +1,39 @@
+@import "./mixins.scss";
+
+@include media('max-width: 807px') {
+  body {
+    --app-left-sidebar-width: 0px;
+  }
+
+  .sidebar {
+    display: none;
+  }
+}
+
+@include media('min-width: 808px', 'max-width: 1328px') {
+  body {
+    --app-left-sidebar-width: 72px;
+  }
+
+  .sidebar {
+    &__content--expanded {
+      display: none;
+    }
+
+    &__content--collapsed {
+      display: block;
+    }
+  }
+}
+
+@include media('min-width: 1329px') {
+  .sidebar {
+    &__content--expanded {
+      display: block;
+    }
+
+    &__content--collapsed {
+      display: none;
+    }
+  }
+}
