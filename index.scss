@@ -1,0 +1,48 @@
+@import './style/variables.scss';
+@import './style/mixins.scss';
+@import './style/breakpoints.scss';
+
+html {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+}
+
+.header {
+  height: var(--app-header-height);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(255,255,255,0.95);
+}
+
+.main {
+  margin-top: var(--app-header-height);
+
+  &__content {
+    height: 3000px;
+    margin-left: var(--app-left-sidebar-width);
+    background-color: bisque;
+  }
+}
+
+.left-sidebar {
+  margin-top: var(--app-header-height);
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: var(--app-left-sidebar-width);
+  background-color: aqua;
+
+  &--expanded {
+    height: 2000px;
+  }
+
+  &--collapsed {
+    height: 300px;
+  }
+}

@@ -1,0 +1,41 @@
+@include media('min-width: 1329px') {
+  .left-sidebar {
+    overflow: auto;
+
+    &--expanded {
+      display: block;
+    }
+
+    &--collapsed {
+      display: none;
+    }
+  }
+}
+
+@include media('min-width: 808px', 'max-width: 1328px') {
+  :root {
+    --app-left-sidebar-width: 72px;
+  }
+
+  .left-sidebar {
+    overflow: hidden;
+
+    &--expanded {
+      display: none;
+    }
+
+    &--collapsed {
+      display: block;
+    }
+  }
+}
+
+@include media('max-width: 807px') {
+  :root {
+    --app-left-sidebar-width: 0px;
+  }
+
+  .left-sidebar {
+    display: none;
+  }
+}
