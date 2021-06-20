@@ -1,4 +1,6 @@
 @import './styles/variables.scss';
+@import './styles/mixins.scss';
+@import './styles/breakpoints.scss';
 
 html {
   height: 100%;
@@ -28,16 +30,27 @@ body {
 }
 
 .left-sidebar {
-  width: 240px;
+
   position: fixed;
   top: 0;
   bottom: 0;
   left: 0;
   background-color: antiquewhite;
   margin-top: var(--app-header-height);
-  overflow: auto;
+
+  width: var(--app-left-sidebar-width);
+  overflow: var(--app-left-sidebar-overflow);
+  display: var(--app-left-sidebar-display);
 
   &__inner {
-    height: 2000px;
+    &--expanded {
+      display: var(--app-left-sidebar-inner-expanded-display);
+      height: 2000px;
+    }
+
+    &--collapsed {
+      display: var(--app-left-sidebar-inner-collapsed-display);
+      height: 200px;
+    }
   }
 }

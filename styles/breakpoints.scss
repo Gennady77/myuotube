@@ -1,0 +1,21 @@
+@include media('min-width: 1329px') {
+  body {
+
+  }
+}
+
+@include media('max-width: 1328px', 'min-width: 808px') {
+  body {
+    --app-left-sidebar-overflow: hidden;
+    --app-left-sidebar-width: 72px;
+    --app-left-sidebar-inner-expanded-display: none;
+    --app-left-sidebar-inner-collapsed-display: block;
+  }
+}
+
+@include media('max-width: 807px') {
+  body {
+    --app-left-sidebar-width: 0;
+    --app-left-sidebar-display: none;
+  }
+}

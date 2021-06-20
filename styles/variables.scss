@@ -1,4 +1,8 @@
 :root {
   --app-header-height: 56px;
   --app-left-sidebar-width: 240px;
+  --app-left-sidebar-overflow: auto;
+  --app-left-sidebar-display: block;
+  --app-left-sidebar-inner-expanded-display: block;
+  --app-left-sidebar-inner-collapsed-display: none;
 }
