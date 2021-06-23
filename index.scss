@@ -11,12 +11,39 @@ body {
 }
 
 .header {
-  height: var(--app-header-height);
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   background-color: rgba(255, 255, 255, 0.95);
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  &__logo {
+    margin-left: var(--app-header-margins);
+    width: 169px;
+    flex-shrink: 0;
+    height: var(--app-header-height);
+    background-color: aqua;
+  }
+
+  &__search {
+    width: 728px;
+    height: 40px;
+    background-color: blanchedalmond;
+    flex-basis: 728px;
+  }
+
+  &__toolbar {
+    margin-right: var(--app-header-margins);
+    width: 225px;
+    height: 40px;
+    flex-shrink: 0;
+    background-color: aqua;
+  }
 }
 
 .main {
