@@ -19,3 +19,9 @@
     --app-left-sidebar-display: none;
   }
 }
+
+@include media('max-width: 656px') {
+  body {
+    --app-header-margins: 8px;
+  }
+}
